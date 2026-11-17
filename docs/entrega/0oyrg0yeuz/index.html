@@ -2,30 +2,178 @@
 <html lang="lv">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Mākslas Terapijas Rokasgrāmata — Piekļuve</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mākslas Terapija – Piekļuve</title>
 <style>
-  html, body { margin:0; background:#FAF7F2; color:#2B2522; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  .wrap { max-width:560px; margin:0 auto; padding:64px 20px; text-align:center; }
-  .badge { display:inline-block; font-size:12px; letter-spacing:.08em; text-transform:uppercase; background:#EFE6DA; padding:6px 12px; border-radius:99px; }
-  h1 { font-size:28px; line-height:1.2; margin:18px 0 10px; }
-  p { font-size:17px; line-height:1.55; color:#5B514B; }
-  .card { background:#fff; border:1px solid #EAE0D5; border-radius:16px; padding:24px 20px; margin-top:28px; }
-  .dot { display:inline-block; width:10px; height:10px; border-radius:50%; background:#1F9D55; margin-right:8px; animation:p 1.6s infinite; }
-  @keyframes p { 50% { opacity:.3; } }
-  @media (prefers-reduced-motion: reduce) { .dot { animation:none; } }
+:root{
+  --bg:#FFF8F4;--bg2:#F6ECFF;--a1:#D9C9F7;--a1d:#B89FE0;
+  --a2:#F3B8D2;--title:#4E4036;--body:#6F6258;--card:#FFFFFF;
+  --green:#5BAA7A;--grad:linear-gradient(135deg,#D9C9F7,#F3B8D2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--body);font-family:'Georgia','Times New Roman',serif;line-height:1.6;min-height:100vh}
+
+.hero{background:var(--grad);padding:52px 24px 44px;text-align:center}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.3);border-radius:99px;padding:6px 18px;font-family:Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3A2E28;margin-bottom:20px}
+.hero h1{font-size:clamp(22px,5vw,34px);color:#3A2E28;line-height:1.2;margin-bottom:10px}
+.hero .sub{font-family:Arial,sans-serif;font-size:14px;color:#5B4A40;max-width:480px;margin:0 auto}
+
+.stats{display:flex;justify-content:center;gap:0;background:var(--card);border-bottom:1px solid var(--a1)}
+.stat{padding:18px 24px;text-align:center;border-right:1px solid var(--a1);flex:1;max-width:180px}
+.stat:last-child{border-right:none}
+.stat .num{font-size:22px;font-weight:700;color:var(--title);font-family:Arial,sans-serif}
+.stat .lbl{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--a1d);margin-top:2px}
+
+.wrap{max-width:640px;margin:0 auto;padding:32px 20px 60px}
+
+/* Core card */
+.core-card{background:var(--card);border:2px solid var(--a1d);border-radius:16px;padding:28px 24px;margin-bottom:28px;text-align:center;box-shadow:0 4px 20px rgba(184,159,224,.15)}
+.core-card .tag{display:inline-block;background:var(--grad);border-radius:99px;padding:5px 16px;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#3A2E28;margin-bottom:14px}
+.core-card h2{font-size:20px;color:var(--title);margin-bottom:6px}
+.core-card .desc{font-family:Arial,sans-serif;font-size:13px;color:var(--body);margin-bottom:20px}
+.btn-dl-lg{display:inline-flex;align-items:center;gap:10px;background:var(--a1d);color:#fff;text-decoration:none;padding:14px 32px;border-radius:99px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;transition:opacity .2s}
+.btn-dl-lg:hover{opacity:.85}
+.btn-dl-lg svg{flex-shrink:0}
+
+/* Bonus section */
+.section-title{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a1d);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--a1)}
+.bonus-list{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.bonus-card{background:var(--card);border:1px solid var(--a1);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:14px}
+.bonus-card .icon{font-size:24px;flex-shrink:0}
+.bonus-card .info{flex:1;min-width:0}
+.bonus-card .info strong{display:block;font-size:14px;color:var(--title);margin-bottom:2px}
+.bonus-card .info span{font-family:Arial,sans-serif;font-size:12px;color:var(--body)}
+.btn-dl{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);color:var(--a1d);text-decoration:none;padding:8px 16px;border-radius:99px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
+.btn-dl:hover{opacity:.8}
+
+/* Steps */
+.steps-title{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a1d);margin-bottom:14px}
+.steps{list-style:none;display:flex;flex-direction:column;gap:10px}
+.steps li{display:flex;gap:12px;font-family:Arial,sans-serif;font-size:13px;color:var(--body);align-items:flex-start}
+.steps .n{flex-shrink:0;width:26px;height:26px;background:var(--a1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--title)}
+
+.footer{text-align:center;font-family:Arial,sans-serif;font-size:12px;color:var(--a1d);margin-top:40px}
+
+@media(max-width:460px){
+  .stats{flex-wrap:wrap}.stat{min-width:50%}
+  .bonus-card{flex-wrap:wrap}.btn-dl{margin-top:4px}
+}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <span class="badge">Pirkums apstiprināts</span>
-    <h1>Mākslas Terapijas Rokasgrāmata + 6 Digitālie Bonusi</h1>
-    <p>Paldies! Mēs pabeidzam tavus materiālus. Šī lapa automātiski atjaunosies ar visiem taviem failiem.</p>
-    <div class="card">
-      <p><span class="dot"></span><strong>Saglabā šo saiti</strong></p>
-      <p>Šī ir tava mūža piekļuve. Atgriezies pēc dažām stundām — šeit atradīsi galveno rokasgrāmatu un visus bonusus.</p>
-    </div>
+
+<div class="hero">
+  <div class="badge">🎨 Jūsu Piekļuve ir Aktīva</div>
+  <h1>Mākslas Terapija –<br>Jūsu Jaunais Sākums</h1>
+  <p class="sub">Visi materiāli pieejami zemāk. Lejupielādējiet un izmantojiet jebkurā laikā.</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="num">100+</div><div class="lbl">Vingrinājumi</div></div>
+  <div class="stat"><div class="num">6</div><div class="lbl">Bonusi</div></div>
+  <div class="stat"><div class="num">∞</div><div class="lbl">Mūžīga piekļuve</div></div>
+</div>
+
+<div class="wrap">
+
+  <div class="core-card">
+    <div class="tag">⭐ Galvenais produkts</div>
+    <h2>Mākslas Terapijas Rokasgrāmata</h2>
+    <p class="desc">100+ vingrinājumi 10 emocionālajās tēmās – jūtas, trauksme, pašvērtība, robežas un daudz vairāk.</p>
+    <a class="btn-dl-lg" href="./makslas-terapija-100-vingrinajumi.pdf" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Lejupielādēt rokasgrāmatu
+    </a>
   </div>
+
+  <p class="section-title">🎁 Jūsu 6 bonusi</p>
+  <div class="bonus-list">
+
+    <div class="bonus-card">
+      <div class="icon">🖌️</div>
+      <div class="info">
+        <strong>Bonuss 1 – 17 Papildu Vingrinājumi</strong>
+        <span>Daudzveidīgas tehnikas: ūdens nospiedumi, pirkstu nospiedumi, automātiskā zīmēšana un vēl</span>
+      </div>
+      <a class="btn-dl" href="./bono1-17-papildu-vingrinajumi.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lejupielādēt
+      </a>
+    </div>
+
+    <div class="bonus-card">
+      <div class="icon">🌟</div>
+      <div class="info">
+        <strong>Bonuss 2 – 20 Vingrinājumi Pašvērtībai</strong>
+        <span>Stipriniet pārliecību par sevi un pašmīlestību caur mākslu</span>
+      </div>
+      <a class="btn-dl" href="./bono2-20-vingrinajumi-pasvertibai.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lejupielādēt
+      </a>
+    </div>
+
+    <div class="bonus-card">
+      <div class="icon">🃏</div>
+      <div class="info">
+        <strong>Bonuss 3 – Impulsu Kārtis Trauksmes Pārvarēšanai</strong>
+        <span>30 kārtis – izgrieziet un izmantojiet jebkurā stresa brīdī</span>
+      </div>
+      <a class="btn-dl" href="./bono3-impulsu-kartis-trauksme.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lejupielādēt
+      </a>
+    </div>
+
+    <div class="bonus-card">
+      <div class="icon">🔓</div>
+      <div class="info">
+        <strong>Bonuss 4 – Impulsi Emocionālo Bloķējumu Risināšanai</strong>
+        <span>Metode IZJŪTI–UZZĪMĒ–ATBRĪVO: 5 vingrinājumi dziļu barjeru pārvarēšanai</span>
+      </div>
+      <a class="btn-dl" href="./bono4-impulsi-emocionalo-blokejumu.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lejupielādēt
+      </a>
+    </div>
+
+    <div class="bonus-card">
+      <div class="icon">📅</div>
+      <div class="info">
+        <strong>Bonuss 5 – Piemērošanas un Pavadīšanas Ceļvedis</strong>
+        <span>Kā ieviest mākslas terapiju ikdienā – nedēļas un mēneša programmas</span>
+      </div>
+      <a class="btn-dl" href="./bono5-piemerosanas-celyedis.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lejupielādēt
+      </a>
+    </div>
+
+    <div class="bonus-card">
+      <div class="icon">💪</div>
+      <div class="info">
+        <strong>Bonuss 6 – Stiprini Savu Pašapziņu</strong>
+        <span>24 kārtis ikdienas pārliecības stiprināšanai – rītu un vakara rituāli</span>
+      </div>
+      <a class="btn-dl" href="./bono6-stiprini-pasapzinu.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lejupielādēt
+      </a>
+    </div>
+
+  </div>
+
+  <p class="steps-title">📌 Nākamie soļi</p>
+  <ol class="steps">
+    <li><span class="n">1</span>Lejupielādējiet rokasgrāmatu un pirmā bonusa kārtis.</li>
+    <li><span class="n">2</span>Izlasiet vingrinājumu 1 – tas aizņem tikai 15 minūtes.</li>
+    <li><span class="n">3</span>Sagatavojiet papīru, zīmuli un klusu vietu.</li>
+    <li><span class="n">4</span>Sāciet no pirmās tēmas – Jūtas (1.–10. vingrinājums).</li>
+  </ol>
+
+  <div class="footer">Mākslas Terapija &nbsp;·&nbsp; Mūžīga piekļuve</div>
+
+</div>
 </body>
 </html>
