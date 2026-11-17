@@ -5,60 +5,75 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Mākslas Terapija – Piekļuve</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFF8F4;--bg2:#F6ECFF;--a1:#D9C9F7;--a1d:#B89FE0;
   --a2:#F3B8D2;--title:#4E4036;--body:#6F6258;--card:#FFFFFF;
-  --green:#5BAA7A;--grad:linear-gradient(135deg,#D9C9F7,#F3B8D2);
+  --green:#5BAA7A;--gold:#C9A84C;
+  --grad:linear-gradient(135deg,#D9C9F7,#F3B8D2);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--body);font-family:'Georgia','Times New Roman',serif;line-height:1.6;min-height:100vh}
+body{background:var(--bg);color:var(--body);font-family:'Inter',Arial,sans-serif;line-height:1.6;min-height:100vh}
 
-.hero{background:var(--grad);padding:52px 24px 44px;text-align:center}
-.hero .badge{display:inline-block;background:rgba(255,255,255,.3);border-radius:99px;padding:6px 18px;font-family:Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#3A2E28;margin-bottom:20px}
-.hero h1{font-size:clamp(22px,5vw,34px);color:#3A2E28;line-height:1.2;margin-bottom:10px}
-.hero .sub{font-family:Arial,sans-serif;font-size:14px;color:#5B4A40;max-width:480px;margin:0 auto}
+.hero{background:linear-gradient(145deg,#4E4036 0%,#6F6258 50%,#B89FE0 100%);padding:52px 24px 44px;text-align:center}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:6px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,5vw,34px);color:#fff;line-height:1.2;margin-bottom:10px}
+.hero .sub{font-size:14px;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 20px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.hero-pill{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px}
 
 .stats{display:flex;justify-content:center;gap:0;background:var(--card);border-bottom:1px solid var(--a1)}
 .stat{padding:18px 24px;text-align:center;border-right:1px solid var(--a1);flex:1;max-width:180px}
 .stat:last-child{border-right:none}
-.stat .num{font-size:22px;font-weight:700;color:var(--title);font-family:Arial,sans-serif}
-.stat .lbl{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--a1d);margin-top:2px}
+.stat .num{font-size:22px;font-weight:700;color:var(--title)}
+.stat .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--a1d);margin-top:2px}
 
 .wrap{max-width:640px;margin:0 auto;padding:32px 20px 60px}
 
+.section-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a1d);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--a1)}
+.section-title.gold{color:var(--gold);border-bottom-color:rgba(201,168,76,.3)}
+
 /* Core card */
 .core-card{background:var(--card);border:2px solid var(--a1d);border-radius:16px;padding:28px 24px;margin-bottom:28px;text-align:center;box-shadow:0 4px 20px rgba(184,159,224,.15)}
-.core-card .tag{display:inline-block;background:var(--grad);border-radius:99px;padding:5px 16px;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#3A2E28;margin-bottom:14px}
-.core-card h2{font-size:20px;color:var(--title);margin-bottom:6px}
-.core-card .desc{font-family:Arial,sans-serif;font-size:13px;color:var(--body);margin-bottom:20px}
-.btn-dl-lg{display:inline-flex;align-items:center;gap:10px;background:var(--a1d);color:#fff;text-decoration:none;padding:14px 32px;border-radius:99px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;transition:opacity .2s}
+.core-card .tag{display:inline-block;background:var(--grad);border-radius:99px;padding:5px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#3A2E28;margin-bottom:14px}
+.core-card h2{font-family:'Playfair Display',Georgia,serif;font-size:20px;color:var(--title);margin-bottom:6px}
+.core-card .desc{font-size:13px;color:var(--body);margin-bottom:20px}
+.btn-dl-lg{display:inline-flex;align-items:center;gap:10px;background:var(--a1d);color:#fff;text-decoration:none;padding:14px 32px;border-radius:99px;font-size:14px;font-weight:700;letter-spacing:.04em;transition:opacity .2s}
 .btn-dl-lg:hover{opacity:.85}
-.btn-dl-lg svg{flex-shrink:0}
+
+/* Edition 2 card */
+.ed2-card{background:linear-gradient(135deg,#2D1E16,#4E4036);border-radius:16px;padding:28px 24px;margin-bottom:28px;text-align:center;box-shadow:0 4px 24px rgba(78,64,54,.3)}
+.ed2-card .tag{display:inline-block;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.5);border-radius:99px;padding:5px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:14px}
+.ed2-card h2{font-family:'Playfair Display',Georgia,serif;font-size:20px;color:#fff;margin-bottom:6px}
+.ed2-card .desc{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:20px}
+.btn-dl-gold{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C9A84C,#A07830);color:#fff;text-decoration:none;padding:14px 32px;border-radius:99px;font-size:14px;font-weight:700;letter-spacing:.04em;transition:opacity .2s}
+.btn-dl-gold:hover{opacity:.85}
 
 /* Bonus section */
-.section-title{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a1d);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--a1)}
-.bonus-list{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.bonus-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
 .bonus-card{background:var(--card);border:1px solid var(--a1);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:14px}
 .bonus-card .icon{font-size:24px;flex-shrink:0}
 .bonus-card .info{flex:1;min-width:0}
 .bonus-card .info strong{display:block;font-size:14px;color:var(--title);margin-bottom:2px}
-.bonus-card .info span{font-family:Arial,sans-serif;font-size:12px;color:var(--body)}
-.btn-dl{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);color:var(--a1d);text-decoration:none;padding:8px 16px;border-radius:99px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
+.bonus-card .info span{font-size:12px;color:var(--body)}
+.btn-dl{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);color:var(--a1d);text-decoration:none;padding:8px 16px;border-radius:99px;font-size:12px;font-weight:700;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
 .btn-dl:hover{opacity:.8}
 
 /* Steps */
-.steps-title{font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a1d);margin-bottom:14px}
+.steps-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--a1d);margin-bottom:14px}
 .steps{list-style:none;display:flex;flex-direction:column;gap:10px}
-.steps li{display:flex;gap:12px;font-family:Arial,sans-serif;font-size:13px;color:var(--body);align-items:flex-start}
+.steps li{display:flex;gap:12px;font-size:13px;color:var(--body);align-items:flex-start}
 .steps .n{flex-shrink:0;width:26px;height:26px;background:var(--a1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--title)}
 
-.footer{text-align:center;font-family:Arial,sans-serif;font-size:12px;color:var(--a1d);margin-top:40px}
+.footer{text-align:center;font-size:12px;color:var(--a1d);margin-top:40px}
 
 @media(max-width:460px){
   .stats{flex-wrap:wrap}.stat{min-width:50%}
   .bonus-card{flex-wrap:wrap}.btn-dl{margin-top:4px}
 }
+
+svg{flex-shrink:0}
 </style>
 </head>
 <body>
@@ -67,27 +82,34 @@ body{background:var(--bg);color:var(--body);font-family:'Georgia','Times New Rom
   <div class="badge">🎨 Jūsu Piekļuve ir Aktīva</div>
   <h1>Mākslas Terapija –<br>Jūsu Jaunais Sākums</h1>
   <p class="sub">Visi materiāli pieejami zemāk. Lejupielādējiet un izmantojiet jebkurā laikā.</p>
+  <div class="hero-pills">
+    <span class="hero-pill">🎨 200+ vingrinājumi</span>
+    <span class="hero-pill">🤖 AI ilustrācijas</span>
+    <span class="hero-pill">📦 6 bonusi</span>
+    <span class="hero-pill">⭐ Ekskluzīvs bonuss</span>
+  </div>
 </div>
 
 <div class="stats">
-  <div class="stat"><div class="num">100+</div><div class="lbl">Vingrinājumi</div></div>
-  <div class="stat"><div class="num">6</div><div class="lbl">Bonusi</div></div>
+  <div class="stat"><div class="num">200+</div><div class="lbl">Vingrinājumi</div></div>
+  <div class="stat"><div class="num">20</div><div class="lbl">Tēmas</div></div>
   <div class="stat"><div class="num">∞</div><div class="lbl">Mūžīga piekļuve</div></div>
 </div>
 
 <div class="wrap">
 
+  <p class="section-title">📗 Galvenais produkts</p>
   <div class="core-card">
-    <div class="tag">⭐ Galvenais produkts</div>
+    <div class="tag">⭐ Galvenais produkts · AI ilustrācijas</div>
     <h2>Mākslas Terapijas Rokasgrāmata</h2>
-    <p class="desc">100+ vingrinājumi 10 emocionālajās tēmās – jūtas, trauksme, pašvērtība, robežas un daudz vairāk.</p>
+    <p class="desc">100 vingrinājumi 10 emocionālajās tēmās – ar AI ģenerētām ilustrācijām katrai nodaļai. Jūtas, trauksme, pašvērtība, robežas un daudz vairāk.</p>
     <a class="btn-dl-lg" href="./makslas-terapija-100-vingrinajumi.pdf" download>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Lejupielādēt rokasgrāmatu
     </a>
   </div>
 
-  <p class="section-title">🎁 Jūsu 6 bonusi</p>
+  <p class="section-title">🎁 Jūsu 6 ekskluzīvie bonusi</p>
   <div class="bonus-list">
 
     <div class="bonus-card">
@@ -117,10 +139,10 @@ body{background:var(--bg);color:var(--body);font-family:'Georgia','Times New Rom
     <div class="bonus-card">
       <div class="icon">🃏</div>
       <div class="info">
-        <strong>Bonuss 3 – Impulsu Kārtis Trauksmes Pārvarēšanai</strong>
-        <span>30 kārtis – izgrieziet un izmantojiet jebkurā stresa brīdī</span>
+        <strong>Bonuss 3 – 50 Jautājumi Trauksmes Pārvarēšanai</strong>
+        <span>50 mākslas terapijas impulsu kārtis – izdrukā un izmanto katru dienu stresa brīžos</span>
       </div>
-      <a class="btn-dl" href="./bono3-impulsu-kartis-trauksme.pdf" download>
+      <a class="btn-dl" href="./bono3-50-jautajumi-trauksme.pdf" download>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Lejupielādēt
       </a>
@@ -130,7 +152,7 @@ body{background:var(--bg);color:var(--body);font-family:'Georgia','Times New Rom
       <div class="icon">🔓</div>
       <div class="info">
         <strong>Bonuss 4 – Impulsi Emocionālo Bloķējumu Risināšanai</strong>
-        <span>Metode IZJŪTI–UZZĪMĒ–ATBRĪVO: 5 vingrinājumi dziļu barjeru pārvarēšanai</span>
+        <span>Metode IZJŪTI–UZZĪMĒ–ATBRĪVO: vingrinājumi dziļu barjeru pārvarēšanai</span>
       </div>
       <a class="btn-dl" href="./bono4-impulsi-emocionalo-blokejumu.pdf" download>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -153,15 +175,26 @@ body{background:var(--bg);color:var(--body);font-family:'Georgia','Times New Rom
     <div class="bonus-card">
       <div class="icon">💪</div>
       <div class="info">
-        <strong>Bonuss 6 – Stiprini Savu Pašapziņu</strong>
-        <span>24 kārtis ikdienas pārliecības stiprināšanai – rītu un vakara rituāli</span>
+        <strong>Bonuss 6 – 40 Apstiprinājumu Kārtis Pašapziņai</strong>
+        <span>40 apstiprinājumu un zīmēšanas kārtis – pašapziņas nostiprināšanai katru dienu</span>
       </div>
-      <a class="btn-dl" href="./bono6-stiprini-pasapzinu.pdf" download>
+      <a class="btn-dl" href="./bono6-40-apstiprinajumi-pasapzina.pdf" download>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Lejupielādēt
       </a>
     </div>
 
+  </div>
+
+  <p class="section-title gold">⭐ Ekskluzīvais bonuss</p>
+  <div class="ed2-card">
+    <div class="tag">⭐ Ekskluzīvs · 2. Izdevums</div>
+    <h2 style="color:#fff">Mākslas Terapijas Rokasgrāmata — 2. Izdevums</h2>
+    <p class="desc">100 jauni vingrinājumi 10 jaunās tēmās: Daba un Kustības, Spēle un Humors, Ēna un Gaisma, Laiks un Pārmaiņas, Stāsts un Naratīvs, Spēks un Neaizsargātība, Pateicība un Brīnumi, Radošums, Miers, Transformācija.</p>
+    <a class="btn-dl-gold" href="./izdevums2-100-jauni-vingrinajumi.pdf" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Lejupielādēt 2. izdevumu
+    </a>
   </div>
 
   <p class="steps-title">📌 Nākamie soļi</p>
